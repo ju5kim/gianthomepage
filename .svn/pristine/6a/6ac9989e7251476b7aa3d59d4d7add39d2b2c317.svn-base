@@ -1,0 +1,35 @@
+package kr.co.giant;
+
+import javax.inject.Inject;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class GiantController {
+	
+	@Inject
+	private SqlSessionTemplate sqlSession;
+	
+	@RequestMapping("/")
+	public String giantMain() {
+		return "giant/main";
+	}
+	
+	@RequestMapping("/ceoMeet")
+	public String ceoMeet() {
+		
+		return "giant/ceoMeet";
+	}
+	
+	@RequestMapping("/companyHistory")
+	public String companyHistory() {
+		return"giant/companyHistory";
+	}
+	
+	@RequestMapping("/companygroup")
+	public String companyGroup() {
+		return "giant/companyGroup";
+	}
+}

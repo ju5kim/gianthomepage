@@ -1,0 +1,52 @@
+각 페이지 마다 중앙 내용 이미지 저장된 곳
+<div id="contents">
+<div id="contents2">
+---------------------------------------
+화면 상단에  오른쪽  네이게이션표시
+<span id="subtitle"> 
+<b id="sub">
+----------------------------------------
+파일업로드시
+input태그 네임에 따라 폴더가 생성된다.
+생성된 폴더에서 파일을 자동으로 삭제되고 이미지 올라감
+아무 이미지도 설정하지않으면 기존 이미지 적용됨 
+-----------------------------------------
+
+
+-----------------------------------------------------------
+개발시 Server폴더 설정 context.xml설정
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+--><!-- The contents of this file will be loaded for each web application -->
+<Context allowCasualMultipartParsing="true" path="/">
+
+    <!-- Default set of monitored resources -->
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+    <!-- Uncomment this to disable session persistence across Tomcat restarts -->
+    <!--
+    <Manager pathname="" />
+    -->
+	<Resources cachingAllowed="ture" cacheMaxSize="100000"></Resources>
+    <!-- Uncomment this to enable Comet connection tacking (provides events
+         on session expiration as well as webapp lifecycle) -->
+    <!--
+    <Valve className="org.apache.catalina.valves.CometConnectionManagerValve" />
+    -->
+</Context>
+--------------------------------------------

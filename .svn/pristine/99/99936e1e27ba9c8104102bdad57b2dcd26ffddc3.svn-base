@@ -1,0 +1,54 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+<script>
+	
+</script>
+<style>
+	
+</style>
+</head>
+<body>
+	회사 메인홈페이지
+<img alt="표시할 수 없습니다." src="">
+<img alt="표시할 수 없습니다."  src="">
+<img alt="표시할 수 없습니다."  src="">
+
+-회사소개
+<br>
+<ul>
+	<li>CEO인사말</li>
+	<li>회사연혁</li>
+	<li>조직도</li>
+	<li>찾아오시는길</li><!-- (지도API) -->
+</ul>
+- 사업소개
+<ul>
+	<li>사업소개</li>
+	<li>사업실적</li>
+</ul>
+- 채용정보
+<ul>
+	<li>채용안내</li>
+	<li>입사지원</li>
+</ul>
+-커뮤니티
+<ul>
+	<li>업계소식</li>
+	<li>자유게시판</li>
+</ul>
+-고객센터
+<ul>
+	<li>공지사항</li>
+	<li>FAQ</li>
+	<li>Q&amp;A</li>
+</ul>
+	
+	
+</body>
+</html>

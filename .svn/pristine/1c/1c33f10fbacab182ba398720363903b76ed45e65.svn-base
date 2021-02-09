@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="mapperCombine">
+  
+  
+  		<select id="CombineList" resultType="map" parameterType="map">
+  			select
+  				rnum
+  				,seq
+				,name
+				,subject
+				,content
+				,regdate
+				,viewcnt
+				,regpass
+  			from (
+	  			select
+	  				ROW_NUMBER() OVER(ORDER BY ${colAlias}_SEQ DESC) rnum
+	  				,${colAlias}_seq		seq
+					,${colAlias}_name		name
+					,${colAlias}_subject	subject
+					,${colAlias}_content	content
+					,${colAlias}_regdate	regdate
+					,${colAlias}_viewcnt	viewcnt
+					,${colAlias}_regpass	regpass
+				from giant_web_${tbAlias}
+				where 1=1
+				<if test="searchTxt != null and searchTxt != ''">
+					and ${colAlias}_subject like '%'||#{searchTxt}||'%'
+				</if>
+			)where rnum between (#{pageNo}-1) * #{listSize} + 1 and #{pageNo} * #{listSize}
+			
+  		</select>
+  		
+  		<insert id="insert" parameterType="map">
+  			insert into ${tbAlias}
+  			(
+  				${colAlias}_seq
+  				,${colAlias}_name
+				,${colAlias}_subject
+				,${colAlias}_content
+				,${colAlias}_regdate
+				,${colAlias}_viewcnt
+				,${colAlias}_regpass
+  			)values(
+  				(select nvl(max(${colAlias}_seq), 0)+1 from giant_web_${tbAlias})
+  				,#{regName}
+				,#{regSubject}
+				,#{regContent}
+				,sysdate
+				,0
+				,#{regPass}
+  			)
+  		</insert>
+  		
+  		<select id="detail" resultType="map" parameterType="map">
+  			select
+  				${colAlias}_seq		seq
+				,${colAlias}_name		name
+				,${colAlias}_subject	subject
+				,${colAlias}_content	content
+				,${colAlias}_regdate	regdate
+				,${colAlias}_viewcnt	viewcnt
+				,${colAlias}_regpass	regpass
+			from giant_web_${tbAlias}
+			where ${colAlias}_seq = #{seq}
+  		</select>
+  		
+  		<update id="update" parameterType="map">
+  			update giant_web_${tbAlias}
+  			set
+				,${colAlias}_subject
+				,${colAlias}_content
+				,${colAlias}_regpass
+  			where ${colAlias}_seq = #{seq}
+  		</update>
+  
+  </mapper>

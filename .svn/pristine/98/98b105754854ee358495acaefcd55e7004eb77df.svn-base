@@ -1,0 +1,54 @@
+package kr.co.giant;
+
+import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class GiantController {
+	
+	private static String ADDRESS="서울특별시 금천구 가산디지털1로 168 우림라이온스밸리 A동 6층 606호  &nbsp;&nbsp;  TEL: 02.2038.4626    &nbsp;&nbsp;   E-mail : giantsolution@giantsolution.co.kr<br>\r\n" + 
+			"COPYRIGHT (c) 자이언트솔루션 company. All rights reserved.";
+	
+	@Inject
+	private SqlSessionTemplate sqlSession;
+	
+	@RequestMapping("/")
+	public String giantMain(HttpSession session) {
+		session.setAttribute("adminLogin", "adminLogin");
+		return "giant/main";
+	}
+	
+	@RequestMapping("/ceoMent")
+	public String ceoMeet() {
+		
+		return "giant/ceoMent";
+	}
+	
+	@RequestMapping("/companyHistory")
+	public String companyHistory() {
+		return"giant/companyHistory";
+	}
+	
+	@RequestMapping("/companyGroup")
+	public String companyGroup() {
+		return "giant/companyGroup";
+	}
+	
+	@RequestMapping("/companyAdress")
+	public String companyAdress() {
+		return "giant/companyAddress";
+	}
+	
+	@RequestMapping("/adminLogin")
+	public String admin() {
+		return "giant/adminLogin";
+	}
+	
+	
+	
+		
+}

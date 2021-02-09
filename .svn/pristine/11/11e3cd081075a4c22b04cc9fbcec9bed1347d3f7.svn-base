@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="fileMapper">
+  <insert id="insertImage" parameterType="map">
+  <selectKey order="BEFORE" keyProperty="f_seq" resultType="String">
+  SELECT
+			'F' ||'_'|| #{fileMiddle} ||'_'||
+			LPAD(NVL(MAX(f_seq), 0) + 1, 4, '0') 
+			FROM GIANT_WEB_FILES
+    </selectKey>
+  INSERT INTO GIANT_WEB_FILES(
+	  f_seq,
+	  f_realfile,
+	  f_savefile,
+	  f_savepath,
+	  f_savedate
+	  
+  )VALUES(
+  
+	  #{f_seq},
+	  #{real_file_name},
+	  #{ext},
+	  #{fileSavePath},
+	  sysdate
+  )
+  </insert>
+  <!--  <insert id="filetableinsert" parameterType="list">
+  </insert>
+  	-->
+  </mapper>

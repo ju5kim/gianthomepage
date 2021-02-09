@@ -1,0 +1,62 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+<script>
+	
+</script>
+<style>
+	
+</style>
+</head>
+<body>
+	회사 메인홈페이지
+	<br>
+
+
+
+
+
+<br>
+-회사소개
+<br>
+<div>                                                                                         
+	<ul>                                                                                      
+		<li><a href="">CEO인사말</a></li>
+		<li><a href="">회사연혁</a></li>
+		<li><a href="">조직도</a></li>
+		<li><a href="">찾아오시는길</a></li><!-- (지도API) -->
+	</ul>
+	- 사업소개
+	<ul>
+		<li><a href="">사업소개</a></li>
+		<li><a href="">사업실적</a></li>
+	</ul>
+	- 채용정보
+	<ul>
+		<li><a href="">채용안내</a></li>
+		<li><a href="">입사지원</a></li>
+	</ul>
+	-커뮤니티
+	<ul>
+		<li><a href="">업계소식</a></li>
+		<li><a href="">자유게시판</a></li>
+	</ul>
+	-고객센터
+	<ul>
+		<li><a href="">공지사항</a></li>
+		<li><a href="">FAQ</a></li>
+		<li><a href="">Q&amp;A</a></li>
+	</ul>
+</div>
+<div>                                                              
+	<img src="resources/images/logo_top1.png" width="" height="">  
+	<img src="resources/images/main_bg2.jpg" width="" height="">   
+	<img src="resources/images/main_image.jpg" width="" height=""> 
+</div>                                                            
+</body>
+</html>

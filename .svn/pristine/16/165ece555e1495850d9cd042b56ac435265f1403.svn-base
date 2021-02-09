@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>파일업로드</title>
+</head>
+<body>
+<h1>이미지 변경</h1>
+<form action="/fileUpload" enctype="multipart/form-data" method="post">
+<hr>
+CEO인사말 : <input type="file" id="ceoImage"> F_CEO_001
+<hr>
+
+회사연력 : <input type="file" id="historyImage"> F_HIS_001
+<hr>
+조직도 : <input type="file" id="groupImage">F_ORG_001
+<hr>
+찾아오시는길 : <input type="file" id="adressImage">F_MAP_001
+<hr>
+채용안내 : <input type="file" id="recuritImage"> F_RCU_001
+<br>
+<input type="submit" value="변경사항 적용하기" width="200" height="100">
+</form>
+</body>
+</html>
